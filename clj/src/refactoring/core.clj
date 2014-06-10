@@ -51,8 +51,8 @@
 (defn format-statement [customer-name statement]
   (str "Rental Record for " customer-name "\n"
        (apply str (map #(str "\t" (:title %) "\t" (:amount %) "\n") (:lines statement)))
-       (str "You owed " (:total statement) "\n")
-       (str "You earned " (:points statement) " frequent renter points \n") ))
+       "You owed " (:total statement) "\n"
+       "You earned " (:points statement) " frequent renter points \n"))
 
 (defn -main []
   (let [rentals [(Rental. (RegularMovie. "Reg1") 1)
